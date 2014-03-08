@@ -1,0 +1,4 @@
+zipeinfo
+========
+
+ZIP encryption info
