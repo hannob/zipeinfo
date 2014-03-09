@@ -43,12 +43,14 @@ for zipfile in args:
 		elif comp==99: # WinZip AES
 			f.seek(pos+0x1e+name_len)
 			headid=struct.unpack("H", f.read(2))[0]
+			f.seek(pos+0x1e+name_len+4)
+			aesver=struct.unpack("B", f.read(1))[0]
 			f.seek(pos+0x1e+name_len+8)
 			aessize=struct.unpack("B", f.read(1))[0]
-			if headid!=0x9901: print("WinZip/error   [ok]")
-			elif aessize==1: print("WinZip/AES128  [ok]")
-			elif aessize==2: print("WinZip/AES192  [ok]")
-			elif aessize==3: print("WinZip/AES256  [ok]")
+			if headid!=0x9901 or (aesver!=1 and aesver!=2): print("WinZip/error   [ok]")
+			elif aessize==1: print("WinZip/AES128v%i[ok]" % aesver)
+			elif aessize==2: print("WinZip/AES192v%i[ok]" % aesver)
+			elif aessize==3: print("WinZip/AES256v%i[ok]" % aesver)
 			else: print("WinZip/unknown [?]")
 
 		elif ses==1: # PKWARE Strong Encryption Specification
