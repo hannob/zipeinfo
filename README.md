@@ -51,5 +51,6 @@ More Info
 
 * [PkCrack - attack on legacy ZIP encryption](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html)
 * [A Known Plaintext Attack on the PKZIP Stream Cipher (1994, Eli Biham, Paul C. Kocher)](ftp://utopia.hacktic.nl/pub/crypto/cracking/pkzip.ps.gz)
+* [ZIP Attacks with Reduced Known Plaintext (2001, Michael Stay)](http://link.springer.com/content/pdf/10.1007%2F3-540-45473-X_10.pdf)
 * [.ZIP File Format Specification](https://www.pkware.com/documents/casestudies/APPNOTE.TXT)
 * [WinZip AES Encryption Information: Encryption Specification AE-1 and AE-2](http://www.winzip.com/aes_info.htm)
