@@ -49,7 +49,7 @@ for zipfile in args:
 			elif aessize==1: print("WinZip/AES128  [ok]")
 			elif aessize==2: print("WinZip/AES192  [ok]")
 			elif aessize==3: print("WinZip/AES256  [ok]")
-			else: print("WinZip/unknown [ok]")
+			else: print("WinZip/unknown [?]")
 
 		elif ses==1: # PKWARE Strong Encryption Specification
 			f.seek(pos+0x1e+name_len)
@@ -67,7 +67,7 @@ for zipfile in args:
 			elif algid==0x6720: print("PKZIP/Blowfish [ok]")
 			elif algid==0x6721: print("PKZIP/Twofish  [ok]")
 			elif algid==0x6801: print("PKZIP/RC4      [weak]")
-			else: print("PkSES/unknown   [?]")
+			else: print("PKZIP/unknown   [?]")
 		else: print("PKZIP/legacy   [insecure]")
 		pos+=0x1e+name_len+extra_len+data_len
 		f.seek(pos)
